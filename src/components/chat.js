@@ -10,6 +10,7 @@ class Chat extends Component {
     componentDidMount(){
         this.scrollChat();
         db.ref('/chat').on('value', snapshot => {
+            console.log(snapshot.val());
             this.props.updateChat(snapshot.val());
             // this.refs.chatMessages.scrollTop = this.refs.chatMessages.scrollHeight;
         });
